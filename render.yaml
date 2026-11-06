@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: flowmetrics-api
+    runtime: python
+    rootDir: backend
+    buildCommand: "python -m compileall -q ."
+    startCommand: "python main.py"
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: FLOWMETRICS_CORS_ORIGINS
+        value: https://YOUR-FRONTEND-DOMAIN.example
